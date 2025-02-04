@@ -10,7 +10,7 @@ export const onUserMessage = async (
     return;
   }
 
-  if (message.author.id === phantomUserId) {
+  if (message.author.id === phantomUserId && Math.random() < 0.01) {
     await message.reply("shut up");
   }
 
