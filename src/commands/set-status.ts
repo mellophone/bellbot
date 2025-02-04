@@ -6,6 +6,7 @@ import {
   SlashCommandBuilder,
 } from "discord.js";
 import { Command } from "../interfaces/Command";
+import SettingsData from "../utils/SettingsData";
 
 export const setStatus: Command = {
   data: new SlashCommandBuilder()
@@ -36,6 +37,8 @@ export const setStatus: Command = {
       .setColor("Green");
 
     await interaction.editReply({ embeds: [returnMessage] });
+
+    SettingsData.update("status", statusText);
     return;
   },
 };

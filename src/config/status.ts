@@ -5,8 +5,10 @@ import {
   PresenceUpdateStatus,
 } from "discord.js";
 
+import settings from "../data/settings.json";
+
 const activityStatus: ActivitiesOptions = {
-  name: "Fetching suitcases...",
+  name: settings.status,
   type: ActivityType.Custom,
 };
 
